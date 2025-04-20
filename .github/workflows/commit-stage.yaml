@@ -30,6 +30,7 @@ jobs:
         run: |
           chmod +x ./gradlew 
           ./gradlew build 
+      - name: verify java version
         run: ./gradlew -version
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
