@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}    # -> "SunilAntil-CS/my_catalog_service"
+  IMAGE_NAME: sunilantil-cs/my_catalog_service
   VERSION: latest
 
 jobs:
