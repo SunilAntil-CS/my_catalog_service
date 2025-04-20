@@ -29,7 +29,8 @@ jobs:
       - name: Build, unit tests and integration tests
         run: |
           chmod +x ./gradlew 
-          ./gradlew build --java-home "$JAVA_HOME"
+          ./gradlew build 
+        run: ./gradlew -version
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
@@ -64,7 +65,7 @@ jobs:
         run: |
           chmod +x ./gradlew 
           ./gradlew  bootBuildImage \
-            --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} --java-home "$JAVA_HOME"
+            --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} 
       - name: OCI image vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
