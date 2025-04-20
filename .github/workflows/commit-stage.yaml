@@ -4,7 +4,7 @@ on: push
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: sunilantil-cs/my_catalog_service
-  VERSION: latest
+  VERSION: ${{ github.sha }}
 
 jobs:
   build:
