@@ -39,6 +39,10 @@ jobs:
           path: "${{ github.workspace }}"
           fail-build: false
           severity-cutoff: high
+      - name: Debug file location
+        run:  |
+          echo "Workspace is: $GITHUB_WORKSPACE"
+          ls -R $GITHUB_WORKSPACE
       - name: Upload vulnerability report
         uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
